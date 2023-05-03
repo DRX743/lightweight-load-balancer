@@ -1,6 +1,21 @@
-# NGINX Load balance methods (nginx.conf)
+# NodeJS Load Balancer
 
-## Round Robin
+Load balancing is an approach to distribute and allocate the ingress traffic to multiple application servers.
+
+<p  align="center">
+    <img title="a title" src="./loadBalancer.png">
+</p>
+
+The load balancer stays in between the client and application servers and decides on which server this request should go. The decision can be configured using different algorithms.
+
+- Round-robin (Default)
+- Hash
+- IP Hash
+- Least connections
+
+## NGINX Load balance methods (nginx.conf)
+
+### Round Robin
 
 ```
 upstream my_http_servers {
@@ -11,7 +26,7 @@ upstream my_http_servers {
 }
 ```
 
-## Hash
+### Hash
 
 ```
 upstream my_http_servers {
@@ -23,7 +38,7 @@ upstream my_http_servers {
 }
 ```
 
-## IP Hash
+### IP Hash
 
 ```
 upstream my_http_servers {
@@ -35,7 +50,7 @@ upstream my_http_servers {
 }
 ```
 
-## Least connection
+### Least connection
 
 ```
 upstream my_http_servers {
